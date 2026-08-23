@@ -81,7 +81,8 @@ node* deletehead(node* head){
     return head;
 }
 node* deletetail(node* head){
-    if(head==nullptr || head->next==nullptr){return nullptr;}
+    if(head==nullptr){return nullptr;}
+    if(head->next==nullptr){delete head; return nullptr;}
     node* temp=head;
     while(temp->next->next!=nullptr){
         temp=temp->next;
